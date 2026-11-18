@@ -41,7 +41,6 @@ Synthetic and scRNA-seq data are publicly available from the sources listed here
 }
 ```
 
-
 ---
 
 ## License
