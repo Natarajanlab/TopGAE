@@ -13,7 +13,7 @@ Shreyansh Priyadarshi and Kedar Natarajan
 
 Reconstructing directed gene regulatory networks (GRNs) from single-cell RNA-seq (scRNA-seq) data is challenging due to high sparsity, technical dropout, and cellular heterogeneity, while existing graph models often mask individual transcription factor (TF) influences or overfit incomplete priors. This repository provides TopGAE, a topology-informed graph autoencoder that preserves regulatory asymmetry and jointly reconstructs network links and masked expression profiles by scoring TF-gene edges via allocation coefficients and bounded interaction strengths.
 
-**How TopGAE works (Fig. 1 of the manuscript)**
+**How TopGAE works**
 
 1. **Inputs.** A genes x cells expression matrix (standardised per cell) and a partially known, directed prior network. Every gene has a separate *source* (regulator) and *target* role. Prior edges are split 85% / 5% / 10% into train / validation / test, each paired with an equal number of sampled negative pairs; only training edges are used for message passing.
 2. **Role-specific gates.** Four structural descriptors per gene (log out-degree, log in-degree, HITS hub and authority scores, from the training edges) are combined with the expression embedding to gate each role.
