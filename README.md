@@ -31,7 +31,14 @@ Synthetic and scRNA-seq data are publicly available from the sources listed here
   journal={[Under review]},
   year={2026}
 }
-
+@software{topgae_code,
+  title={TTopGAE: A topology-informed regulatory influence-weighted graph autoencoder for gene regulatory network reconstruction from single-cell transcriptomics},
+  author={[Priyadarshi S] and [Natarajan KN]},
+  year={2026},
+  publisher={Zenodo},
+  doi={10.5281/zenodo.24352290},
+  url={https://doi.org}
+}
 ```
 
 
