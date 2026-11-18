@@ -25,14 +25,14 @@ Synthetic and scRNA-seq data are publicly available from the sources listed here
 ## Citation
 
 ```bibtex
-@article{author2026topgae,
+@article{priyadarshi2026topgae,
   title={TopGAE: A topology-informed regulatory influence-weighted graph autoencoder for gene regulatory network reconstruction from single-cell transcriptomics},
   author={[Priyadarshi S] and [Natarajan KN]},
   journal={[Under review]},
   year={2026}
 }
-@software{topgae_code,
-  title={TTopGAE: A topology-informed regulatory influence-weighted graph autoencoder for gene regulatory network reconstruction from single-cell transcriptomics},
+@software{priyadarshi2026topgae_code,
+  title={TopGAE: A topology-informed regulatory influence-weighted graph autoencoder for gene regulatory network reconstruction from single-cell transcriptomics},
   author={[Priyadarshi S] and [Natarajan KN]},
   year={2026},
   publisher={Zenodo},
