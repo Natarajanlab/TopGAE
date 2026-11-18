@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "topgae"
+version = "1.0.0"
+description = "TopGAE: a topology-informed regulatory influence-weighted graph autoencoder for gene regulatory network reconstruction from single-cell transcriptomics"
+readme = "README.md"
+license = { text = "Apache-2.0" }
+authors = [
+    { name = "Shreyansh Priyadarshi" },
+    { name = "Kedar Natarajan" },
+]
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.23",
+    "pandas>=1.5",
+    "scipy>=1.9",
+    "scikit-learn>=1.1",
+    "torch>=2.0",
+]
+
+[project.optional-dependencies]
+# Reading .h5ad files with run_topgae.py
+h5ad = ["anndata>=0.9"]
+# Everything needed for the experiment scripts and notebooks
+experiments = [
+    "anndata>=0.9",
+    "scanpy>=1.10",
+    "matplotlib>=3.6",
+    "seaborn>=0.13",
+    "jupyter",
+]
+
+[project.urls]
+Repository = "https://github.com/Natarajanlab/TopGAE"
+
+[tool.setuptools]
+packages = ["topgae"]

@@ -1,0 +1,13 @@
+# Core: the topgae package
+numpy>=1.23
+pandas>=1.5
+scipy>=1.9
+scikit-learn>=1.1
+torch>=2.0
+
+# run_topgae.py (.h5ad input) and the experiment notebooks
+anndata>=0.9
+scanpy>=1.10
+matplotlib>=3.6
+seaborn>=0.13
+jupyter

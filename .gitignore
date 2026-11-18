@@ -1,0 +1,32 @@
+# Python / Jupyter
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.ipynb_checkpoints/
+.venv/
+
+# Local material that should not be published
+_original_files/
+TopGAE.pdf
+instructions.txt
+
+# Input data (download separately, see README "Reproducing the paper")
+*.h5ad
+*.h5ad.gz
+experiments/beeline/Dataset/
+experiments/simulations/dyngen_data/
+experiments/simulations/sergio_data/
+experiments/simulations/SERGIO/
+experiments/simulations/sergio_*.csv
+experiments/perturbation/perturb/
+
+# Results, checkpoints and figures produced by the scripts
+topgae_results/
+experiments/beeline/Benchmark_TopGAE_*
+experiments/simulations/Dyngen_TopGAE_Results/
+experiments/simulations/SERGIO_TopGAE_Results/
+experiments/**/figures/
+experiments/**/*.pdf
+*.pt
