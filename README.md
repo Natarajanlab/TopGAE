@@ -9,12 +9,11 @@ Shreyansh Priyadarshi and Kedar Natarajan
 ---
 
 ## Overview
+Reconstructing directed gene regulatory networks (GRNs) from single-cell RNA-seq (scRNA-seq) data is challenging due to high sparsity, technical dropout, and cellular heterogeneity. TopGAE is a topology-informed graph autoencoder that preserves regulatory asymmetry and jointly reconstructs network links and masked expression profiles by scoring TF-gene edges via allocation coefficients and bounded interaction strengths.
 
-Reconstructing directed gene regulatory networks (GRNs) from single-cell RNA-seq (scRNA-seq) data is challenging due to high sparsity, technical dropout, and cellular heterogeneity, while existing graph models often mask individual transcription factor (TF) influences or overfit incomplete priors. This repository provides TopGAE, a topology-informed graph autoencoder that preserves regulatory asymmetry and jointly reconstructs network links and masked expression profiles by scoring TF-gene edges via allocation coefficients and bounded interaction strengths.
+**TopGAE workflow**
 
-**How TopGAE works**
-
-1. **Inputs.** A genes x cells expression matrix (standardised per cell) and a partially known, directed prior network. Every gene has a separate *source* (regulator) and *target* role. Prior edges are split 85% / 5% / 10% into train / validation / test, each paired with an equal number of sampled negative pairs; only training edges are used for message passing.
+1. **Inputs.** A genes x cells expression matrix and a partially known, directed prior network. Every gene has a separate *source* (regulator) and *target* role. Prior edges are split 85% / 5% / 10% into train / validation / test, each paired with an equal number of sampled negative pairs; only training edges are used for message passing.
 2. **Role-specific gates.** Four structural descriptors per gene (log out-degree, log in-degree, HITS hub and authority scores, from the training edges) are combined with the expression embedding to gate each role.
 3. **Dual-score message passing.** Every training edge *i -> j* gets two scores from the pair of gated embeddings: **S1**, a softmax over the incoming regulators of target *j* (relative contribution), and **S2**, a bounded factor in (0, 2) (interaction strength). Messages are weighted by S1 x S2; a reverse pass lets targets send information back to their regulators.
 4. **Decoding.** Source and target embeddings are projected to separate latent spaces and scored by an asymmetric bilinear decoder (so *i -> j* and *j -> i* differ). A second pass masks 20% of genes in both roles and a feature decoder reconstructs their expression. The link (BCE) and reconstruction losses are optimised together; the checkpoint with the best validation AUPRC is kept.
