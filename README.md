@@ -3,7 +3,6 @@ Shreyansh Priyadarshi and Kedar Natarajan
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue)](https://www.python.org/)
-[![R](https://img.shields.io/badge/R-4.0%2B-276DC3)](https://www.r-project.org/)
 
 > **Code accompanying the manuscript**
 
